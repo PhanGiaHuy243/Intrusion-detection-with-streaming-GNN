@@ -1,0 +1,6 @@
+numpy==1.26.4
+pandas==2.2.0
+scikit-learn==1.4.2
+matplotlib==3.8.2
+pyarrow==17.0.0
+streamlit==1.50.0

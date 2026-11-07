@@ -1,0 +1,3552 @@
+{
+  "config": {
+    "seed": 42,
+    "window_size": 10000,
+    "memory_windows": 2,
+    "hidden_dim": 64,
+    "learning_rate": 0.001,
+    "offline_epochs": 15,
+    "stream_warmup_steps": 60,
+    "stream_steps_per_window": 30,
+    "replay_per_class": 1000,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060"
+  },
+  "dataset": {
+    "num_flows": 600100,
+    "num_src_ip": 15,
+    "num_dst_ip": 129,
+    "num_endpoints": 77177,
+    "class_counts": {
+      "Benign": 13859,
+      "DDoS": 56844,
+      "DoS": 56833,
+      "Reconnaissance": 470655,
+      "Theft": 1909
+    },
+    "num_windows": 61,
+    "window_class_counts": [
+      [
+        119,
+        3717,
+        3716,
+        2431,
+        17
+      ],
+      [
+        195,
+        4871,
+        4871,
+        63,
+        0
+      ],
+      [
+        26,
+        4332,
+        4332,
+        1310,
+        0
+      ],
+      [
+        31,
+        4404,
+        4405,
+        1160,
+        0
+      ],
+      [
+        32,
+        4714,
+        4714,
+        540,
+        0
+      ],
+      [
+        36,
+        4390,
+        4390,
+        1184,
+        0
+      ],
+      [
+        28,
+        4986,
+        4985,
+        1,
+        0
+      ],
+      [
+        256,
+        184,
+        182,
+        9354,
+        24
+      ],
+      [
+        195,
+        93,
+        93,
+        9615,
+        4
+      ],
+      [
+        51,
+        81,
+        81,
+        9778,
+        9
+      ],
+      [
+        218,
+        34,
+        34,
+        9714,
+        0
+      ],
+      [
+        75,
+        79,
+        79,
+        9758,
+        9
+      ],
+      [
+        164,
+        12,
+        12,
+        9812,
+        0
+      ],
+      [
+        36,
+        77,
+        77,
+        9801,
+        9
+      ],
+      [
+        200,
+        82,
+        82,
+        9628,
+        8
+      ],
+      [
+        55,
+        31,
+        31,
+        9882,
+        1
+      ],
+      [
+        212,
+        85,
+        85,
+        9610,
+        8
+      ],
+      [
+        55,
+        29,
+        29,
+        9887,
+        0
+      ],
+      [
+        301,
+        58,
+        58,
+        9575,
+        8
+      ],
+      [
+        125,
+        39,
+        39,
+        9796,
+        1
+      ],
+      [
+        135,
+        93,
+        93,
+        9671,
+        8
+      ],
+      [
+        239,
+        31,
+        31,
+        9699,
+        0
+      ],
+      [
+        38,
+        72,
+        72,
+        9810,
+        8
+      ],
+      [
+        190,
+        12,
+        12,
+        9786,
+        0
+      ],
+      [
+        29,
+        60,
+        60,
+        9845,
+        6
+      ],
+      [
+        194,
+        31,
+        31,
+        9744,
+        0
+      ],
+      [
+        66,
+        62,
+        62,
+        9802,
+        8
+      ],
+      [
+        210,
+        56,
+        56,
+        9678,
+        0
+      ],
+      [
+        53,
+        12,
+        12,
+        9922,
+        1
+      ],
+      [
+        176,
+        157,
+        157,
+        9488,
+        22
+      ],
+      [
+        45,
+        80,
+        80,
+        9787,
+        8
+      ],
+      [
+        174,
+        92,
+        92,
+        9634,
+        8
+      ],
+      [
+        406,
+        51,
+        51,
+        9492,
+        0
+      ],
+      [
+        39,
+        78,
+        78,
+        9797,
+        8
+      ],
+      [
+        170,
+        35,
+        41,
+        9754,
+        0
+      ],
+      [
+        39,
+        72,
+        72,
+        9810,
+        7
+      ],
+      [
+        398,
+        118,
+        118,
+        9358,
+        8
+      ],
+      [
+        43,
+        25,
+        25,
+        9906,
+        1
+      ],
+      [
+        151,
+        87,
+        92,
+        9662,
+        8
+      ],
+      [
+        45,
+        30,
+        30,
+        9894,
+        1
+      ],
+      [
+        410,
+        101,
+        102,
+        9379,
+        8
+      ],
+      [
+        167,
+        52,
+        52,
+        9729,
+        0
+      ],
+      [
+        34,
+        43,
+        43,
+        9880,
+        0
+      ],
+      [
+        451,
+        32,
+        37,
+        9480,
+        0
+      ],
+      [
+        157,
+        92,
+        92,
+        9636,
+        23
+      ],
+      [
+        126,
+        931,
+        916,
+        8027,
+        0
+      ],
+      [
+        1879,
+        25,
+        25,
+        8071,
+        0
+      ],
+      [
+        1295,
+        86,
+        86,
+        8512,
+        21
+      ],
+      [
+        61,
+        79,
+        79,
+        9765,
+        16
+      ],
+      [
+        247,
+        64,
+        58,
+        9625,
+        6
+      ],
+      [
+        825,
+        48,
+        48,
+        9062,
+        17
+      ],
+      [
+        1192,
+        66,
+        66,
+        8661,
+        15
+      ],
+      [
+        1438,
+        9,
+        9,
+        8540,
+        4
+      ],
+      [
+        14,
+        2263,
+        2263,
+        5452,
+        8
+      ],
+      [
+        2,
+        3333,
+        3332,
+        3333,
+        0
+      ],
+      [
+        5,
+        3333,
+        3331,
+        3331,
+        0
+      ],
+      [
+        4,
+        3332,
+        3332,
+        3332,
+        0
+      ],
+      [
+        5,
+        3331,
+        3332,
+        3332,
+        0
+      ],
+      [
+        8,
+        3332,
+        3330,
+        3330,
+        0
+      ],
+      [
+        273,
+        2740,
+        2740,
+        2740,
+        1507
+      ],
+      [
+        16,
+        0,
+        0,
+        0,
+        84
+      ]
+    ],
+    "split": {
+      "train": 420343,
+      "test": 179757
+    }
+  },
+  "offline": {
+    "Logistic Regression": {
+      "accuracy": 0.7313039269680736,
+      "macro_precision": 0.4098774149399068,
+      "macro_recall": 0.6801251815311602,
+      "macro_f1": 0.43406244610599665,
+      "weighted_f1": 0.7804753595374453,
+      "per_class_f1": [
+        0.36035538877545387,
+        0.43199815039593087,
+        0.4145354682097933,
+        0.8818230956486058,
+        0.08160012750019922
+      ],
+      "detection_rate": 0.9388204751575603,
+      "false_alarm_rate": 0.20559610705596107,
+      "confusion_matrix": [
+        [
+          3265,
+          33,
+          12,
+          26,
+          774
+        ],
+        [
+          60,
+          7474,
+          8460,
+          315,
+          584
+        ],
+        [
+          42,
+          7730,
+          8453,
+          329,
+          586
+        ],
+        [
+          10590,
+          2464,
+          6714,
+          111753,
+          9510
+        ],
+        [
+          54,
+          8,
+          4,
+          5,
+          512
+        ]
+      ],
+      "train_seconds": 6.399986743927002
+    },
+    "Random Forest": {
+      "accuracy": 0.721735453973976,
+      "macro_precision": 0.35867884106874054,
+      "macro_recall": 0.6535529815171515,
+      "macro_f1": 0.3966488549524328,
+      "weighted_f1": 0.7610665569114211,
+      "per_class_f1": [
+        0.4231850848869909,
+        0.26912339475153546,
+        0.21157211706739182,
+        0.8990219423093331,
+        0.18034173574691253
+      ],
+      "detection_rate": 0.9372092890854954,
+      "false_alarm_rate": 0.011435523114355231,
+      "confusion_matrix": [
+        [
+          4063,
+          5,
+          8,
+          33,
+          1
+        ],
+        [
+          6,
+          5302,
+          11031,
+          441,
+          113
+        ],
+        [
+          8,
+          12642,
+          3929,
+          441,
+          120
+        ],
+        [
+          11015,
+          4535,
+          5010,
+          115910,
+          4561
+        ],
+        [
+          0,
+          25,
+          23,
+          2,
+          533
+        ]
+      ],
+      "train_seconds": 2.285349130630493
+    },
+    "MLP": {
+      "accuracy": 0.8227496008500365,
+      "macro_precision": 0.466403832466687,
+      "macro_recall": 0.5292840693376595,
+      "macro_f1": 0.44862826949949597,
+      "weighted_f1": 0.8113477419821751,
+      "per_class_f1": [
+        0.5542253521126761,
+        0.5495650985150122,
+        0.04455499080782957,
+        0.9461283043789327,
+        0.14866760168302945
+      ],
+      "detection_rate": 0.9883345573792891,
+      "false_alarm_rate": 0.42554744525547444,
+      "confusion_matrix": [
+        [
+          2361,
+          95,
+          0,
+          1639,
+          15
+        ],
+        [
+          2,
+          16080,
+          433,
+          286,
+          92
+        ],
+        [
+          2,
+          16329,
+          412,
+          286,
+          111
+        ],
+        [
+          2036,
+          9066,
+          474,
+          128936,
+          519
+        ],
+        [
+          9,
+          56,
+          35,
+          377,
+          106
+        ]
+      ],
+      "train_seconds": 1.9457099437713623
+    },
+    "E-GraphSAGE": {
+      "accuracy": 0.8224992628937955,
+      "macro_precision": 0.48796902743849396,
+      "macro_recall": 0.5439225378393038,
+      "macro_f1": 0.5086090384162795,
+      "weighted_f1": 0.8366214210807497,
+      "per_class_f1": [
+        0.5566115217646369,
+        0.3847263520475756,
+        0.4669541213241165,
+        0.946517902827421,
+        0.18823529411764706
+      ],
+      "detection_rate": 0.9883801032753192,
+      "false_alarm_rate": 0.42287104622871047,
+      "confusion_matrix": [
+        [
+          2372,
+          90,
+          22,
+          1608,
+          18
+        ],
+        [
+          4,
+          6534,
+          10141,
+          55,
+          159
+        ],
+        [
+          7,
+          6674,
+          10234,
+          55,
+          170
+        ],
+        [
+          2027,
+          3730,
+          6252,
+          128566,
+          456
+        ],
+        [
+          3,
+          46,
+          44,
+          346,
+          144
+        ]
+      ],
+      "train_seconds": 5.218228816986084
+    }
+  },
+  "streaming": {
+    "Streaming E-GraphSAGE + Replay": {
+      "accuracy": 0.7884646670055923,
+      "macro_precision": 0.4163123880519537,
+      "macro_recall": 0.47543663681868936,
+      "macro_f1": 0.41984432832526564,
+      "weighted_f1": 0.8052263801177721,
+      "per_class_f1": [
+        0.29610239560955354,
+        0.349673466096912,
+        0.43775397726337956,
+        0.9163957670877537,
+        0.09929603556872917
+      ],
+      "detection_rate": 0.9419598861822472,
+      "false_alarm_rate": 0.40312954876273654,
+      "confusion_matrix": [
+        [
+          8201,
+          24,
+          85,
+          5427,
+          3
+        ],
+        [
+          2204,
+          17348,
+          26606,
+          6747,
+          222
+        ],
+        [
+          2187,
+          17348,
+          26608,
+          6752,
+          222
+        ],
+        [
+          28795,
+          11343,
+          14878,
+          412982,
+          226
+        ],
+        [
+          266,
+          34,
+          272,
+          1186,
+          134
+        ]
+      ],
+      "mean_latency_ms": 11.988786658427367,
+      "mean_throughput": 850624.0112328604
+    },
+    "Streaming E-GraphSAGE": {
+      "accuracy": 0.818622267412303,
+      "macro_precision": 0.4379508359944636,
+      "macro_recall": 0.4904346813321901,
+      "macro_f1": 0.4596408677830882,
+      "weighted_f1": 0.8283222198439134,
+      "per_class_f1": [
+        0.42540473225404735,
+        0.374706798689323,
+        0.43172345951729674,
+        0.9394410141450689,
+        0.12692833430970513
+      ],
+      "detection_rate": 0.9799639114442362,
+      "false_alarm_rate": 0.5027656477438137,
+      "confusion_matrix": [
+        [
+          6832,
+          24,
+          95,
+          6774,
+          15
+        ],
+        [
+          1627,
+          20927,
+          25015,
+          4595,
+          963
+        ],
+        [
+          1616,
+          20927,
+          25016,
+          4595,
+          963
+        ],
+        [
+          7961,
+          16690,
+          12641,
+          429969,
+          963
+        ],
+        [
+          344,
+          3,
+          5,
+          1215,
+          325
+        ]
+      ],
+      "mean_latency_ms": 11.799273337237537,
+      "mean_throughput": 851012.1003177575
+    },
+    "Streaming MLP + Replay": {
+      "accuracy": 0.7980918488391798,
+      "macro_precision": 0.4121964016375344,
+      "macro_recall": 0.5047580023370192,
+      "macro_f1": 0.4302599300920938,
+      "weighted_f1": 0.8168781714130244,
+      "per_class_f1": [
+        0.3581775349606536,
+        0.48258706467661694,
+        0.33095217161948304,
+        0.9264804674095412,
+        0.05310241179417448
+      ],
+      "detection_rate": 0.9670067319036714,
+      "false_alarm_rate": 0.4799126637554585,
+      "confusion_matrix": [
+        [
+          7146,
+          46,
+          21,
+          6503,
+          24
+        ],
+        [
+          843,
+          33950,
+          15056,
+          2193,
+          1085
+        ],
+        [
+          840,
+          33950,
+          15057,
+          2190,
+          1080
+        ],
+        [
+          16924,
+          19608,
+          7741,
+          414430,
+          9521
+        ],
+        [
+          409,
+          19,
+          0,
+          1093,
+          371
+        ]
+      ],
+      "mean_latency_ms": 11.015925005388757,
+      "mean_throughput": 913274.4097236579
+    },
+    "Streaming MLP": {
+      "accuracy": 0.8093441789527199,
+      "macro_precision": 0.42496775930431074,
+      "macro_recall": 0.5018087676057488,
+      "macro_f1": 0.44795549670913076,
+      "weighted_f1": 0.8221775427355722,
+      "per_class_f1": [
+        0.3541300527240773,
+        0.38026631294321717,
+        0.4430730618631212,
+        0.9318558751428893,
+        0.13045218087234894
+      ],
+      "detection_rate": 0.9620948712610174,
+      "false_alarm_rate": 0.4427219796215429,
+      "confusion_matrix": [
+        [
+          7657,
+          63,
+          35,
+          5975,
+          10
+        ],
+        [
+          965,
+          18634,
+          27893,
+          4711,
+          924
+        ],
+        [
+          958,
+          18633,
+          27893,
+          4709,
+          924
+        ],
+        [
+          19747,
+          7545,
+          16926,
+          423084,
+          922
+        ],
+        [
+          177,
+          3,
+          43,
+          1343,
+          326
+        ]
+      ],
+      "mean_latency_ms": 10.822481681437543,
+      "mean_throughput": 926756.7767953672
+    }
+  },
+  "streaming_windows": {
+    "Streaming E-GraphSAGE + Replay": [
+      {
+        "window": 1,
+        "flows": 10000,
+        "nodes": 8666,
+        "edges": 20000,
+        "accuracy": 0.5038,
+        "weighted_f1": 0.3489052089252516,
+        "latency_ms": 12.443899875506759,
+        "throughput": 803606.5943991506,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 2,
+        "flows": 10000,
+        "nodes": 8558,
+        "edges": 20000,
+        "accuracy": 0.1271,
+        "weighted_f1": 0.0460163138655057,
+        "latency_ms": 12.867399957031012,
+        "throughput": 777157.7811674218,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 3,
+        "flows": 10000,
+        "nodes": 6628,
+        "edges": 20000,
+        "accuracy": 0.4423,
+        "weighted_f1": 0.41530891361568495,
+        "latency_ms": 9.493299992755055,
+        "throughput": 1053374.4859671178,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 4,
+        "flows": 10000,
+        "nodes": 7653,
+        "edges": 20000,
+        "accuracy": 0.2682,
+        "weighted_f1": 0.24073337423848162,
+        "latency_ms": 15.51089994609356,
+        "throughput": 644707.9173196855,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 5,
+        "flows": 10000,
+        "nodes": 7289,
+        "edges": 20000,
+        "accuracy": 0.4414,
+        "weighted_f1": 0.39214078945890235,
+        "latency_ms": 10.159899946302176,
+        "throughput": 984261.6613207521,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 6,
+        "flows": 10000,
+        "nodes": 6784,
+        "edges": 20000,
+        "accuracy": 0.499,
+        "weighted_f1": 0.48427127653340013,
+        "latency_ms": 10.214499896392226,
+        "throughput": 979000.4504804012,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 7,
+        "flows": 10000,
+        "nodes": 6598,
+        "edges": 20000,
+        "accuracy": 0.0564,
+        "weighted_f1": 0.05094807062598292,
+        "latency_ms": 21.937699988484383,
+        "throughput": 455836.30030719884,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 8,
+        "flows": 10000,
+        "nodes": 5367,
+        "edges": 20000,
+        "accuracy": 0.9724,
+        "weighted_f1": 0.9721414955826602,
+        "latency_ms": 14.753199880942702,
+        "throughput": 677819.0548965177,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 9,
+        "flows": 10000,
+        "nodes": 5247,
+        "edges": 20000,
+        "accuracy": 0.9786,
+        "weighted_f1": 0.9749278241312453,
+        "latency_ms": 17.023300053551793,
+        "throughput": 587430.1673906975,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 10,
+        "flows": 10000,
+        "nodes": 5305,
+        "edges": 20000,
+        "accuracy": 0.9875,
+        "weighted_f1": 0.9839279786829084,
+        "latency_ms": 12.317900080233812,
+        "throughput": 811826.6859500442,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 11,
+        "flows": 10000,
+        "nodes": 5685,
+        "edges": 20000,
+        "accuracy": 0.9799,
+        "weighted_f1": 0.9758298141060828,
+        "latency_ms": 13.102500000968575,
+        "throughput": 763213.12720937,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 12,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.992,
+        "weighted_f1": 0.9913869082137282,
+        "latency_ms": 10.264799930155277,
+        "throughput": 974203.1084914412,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 13,
+        "flows": 10000,
+        "nodes": 7642,
+        "edges": 20000,
+        "accuracy": 0.9804,
+        "weighted_f1": 0.9777006228035656,
+        "latency_ms": 20.729999989271164,
+        "throughput": 482392.6678811149,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 14,
+        "flows": 10000,
+        "nodes": 5383,
+        "edges": 20000,
+        "accuracy": 0.9694,
+        "weighted_f1": 0.9670605947848626,
+        "latency_ms": 12.687599984928966,
+        "throughput": 788171.1286514829,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 15,
+        "flows": 10000,
+        "nodes": 5320,
+        "edges": 20000,
+        "accuracy": 0.9927,
+        "weighted_f1": 0.9895863585121318,
+        "latency_ms": 10.365499882027507,
+        "throughput": 964738.8079506673,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 16,
+        "flows": 10000,
+        "nodes": 5285,
+        "edges": 20000,
+        "accuracy": 0.9736,
+        "weighted_f1": 0.9741647973256325,
+        "latency_ms": 16.26499998383224,
+        "throughput": 614817.0925262966,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 17,
+        "flows": 10000,
+        "nodes": 5293,
+        "edges": 20000,
+        "accuracy": 0.9936,
+        "weighted_f1": 0.9907143939557668,
+        "latency_ms": 9.736699983477592,
+        "throughput": 1027042.0180316952,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 18,
+        "flows": 10000,
+        "nodes": 7204,
+        "edges": 20000,
+        "accuracy": 0.9732,
+        "weighted_f1": 0.9703625726270472,
+        "latency_ms": 10.242900112643838,
+        "throughput": 976286.002013824,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 19,
+        "flows": 10000,
+        "nodes": 7614,
+        "edges": 20000,
+        "accuracy": 0.9611,
+        "weighted_f1": 0.9656952671102521,
+        "latency_ms": 9.62910009548068,
+        "throughput": 1038518.646689881,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 20,
+        "flows": 10000,
+        "nodes": 5294,
+        "edges": 20000,
+        "accuracy": 0.9725,
+        "weighted_f1": 0.9746246311365483,
+        "latency_ms": 11.025900021195412,
+        "throughput": 906955.4395357028,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 21,
+        "flows": 10000,
+        "nodes": 5455,
+        "edges": 20000,
+        "accuracy": 0.9672,
+        "weighted_f1": 0.9685311396955126,
+        "latency_ms": 9.932700078934431,
+        "throughput": 1006775.5917857925,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 22,
+        "flows": 10000,
+        "nodes": 5302,
+        "edges": 20000,
+        "accuracy": 0.9832,
+        "weighted_f1": 0.9824122897395373,
+        "latency_ms": 10.29270002618432,
+        "throughput": 971562.366974681,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 23,
+        "flows": 10000,
+        "nodes": 7780,
+        "edges": 20000,
+        "accuracy": 0.983,
+        "weighted_f1": 0.9852952752661864,
+        "latency_ms": 12.079899897798896,
+        "throughput": 827821.4293664901,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 24,
+        "flows": 10000,
+        "nodes": 7753,
+        "edges": 20000,
+        "accuracy": 0.9824,
+        "weighted_f1": 0.983248146784861,
+        "latency_ms": 9.58620011806488,
+        "throughput": 1043166.2052574229,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 25,
+        "flows": 10000,
+        "nodes": 5227,
+        "edges": 20000,
+        "accuracy": 0.9706,
+        "weighted_f1": 0.9721207557071635,
+        "latency_ms": 9.842999977990985,
+        "throughput": 1015950.4238910971,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 26,
+        "flows": 10000,
+        "nodes": 5610,
+        "edges": 20000,
+        "accuracy": 0.9843,
+        "weighted_f1": 0.9827154946160624,
+        "latency_ms": 12.856899993494153,
+        "throughput": 777792.4698068895,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 27,
+        "flows": 10000,
+        "nodes": 5400,
+        "edges": 20000,
+        "accuracy": 0.9696,
+        "weighted_f1": 0.9710485926358917,
+        "latency_ms": 11.336399940773845,
+        "throughput": 882114.2560463847,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 28,
+        "flows": 10000,
+        "nodes": 5274,
+        "edges": 20000,
+        "accuracy": 0.9971,
+        "weighted_f1": 0.996068541481678,
+        "latency_ms": 14.875599881634116,
+        "throughput": 672241.7972767818,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 29,
+        "flows": 10000,
+        "nodes": 5246,
+        "edges": 20000,
+        "accuracy": 0.9366,
+        "weighted_f1": 0.9439344696216773,
+        "latency_ms": 10.73420001193881,
+        "throughput": 931601.7950921152,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 30,
+        "flows": 10000,
+        "nodes": 5244,
+        "edges": 20000,
+        "accuracy": 0.9763,
+        "weighted_f1": 0.9789411210247317,
+        "latency_ms": 10.443100007250905,
+        "throughput": 957570.0695250214,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 31,
+        "flows": 10000,
+        "nodes": 5315,
+        "edges": 20000,
+        "accuracy": 0.9617,
+        "weighted_f1": 0.9588047671707894,
+        "latency_ms": 12.095199897885323,
+        "throughput": 826774.2645368235,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 32,
+        "flows": 10000,
+        "nodes": 6092,
+        "edges": 20000,
+        "accuracy": 0.9592,
+        "weighted_f1": 0.963923917161978,
+        "latency_ms": 11.305799940600991,
+        "throughput": 884501.7648055447,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 33,
+        "flows": 10000,
+        "nodes": 5586,
+        "edges": 20000,
+        "accuracy": 0.9821,
+        "weighted_f1": 0.9840811491460363,
+        "latency_ms": 10.131800081580877,
+        "throughput": 986991.4447068016,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 34,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9762,
+        "weighted_f1": 0.9759583424005639,
+        "latency_ms": 14.898800058290362,
+        "throughput": 671194.9929441164,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 35,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9835,
+        "weighted_f1": 0.985263331159118,
+        "latency_ms": 10.278500150889158,
+        "throughput": 972904.5924209997,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 36,
+        "flows": 10000,
+        "nodes": 5723,
+        "edges": 20000,
+        "accuracy": 0.9517,
+        "weighted_f1": 0.9573333756105697,
+        "latency_ms": 11.242499807849526,
+        "throughput": 889481.8920092832,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 37,
+        "flows": 10000,
+        "nodes": 5953,
+        "edges": 20000,
+        "accuracy": 0.9935,
+        "weighted_f1": 0.9938926641820343,
+        "latency_ms": 10.417799931019545,
+        "throughput": 959895.5697185618,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 38,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9664,
+        "weighted_f1": 0.967893360522225,
+        "latency_ms": 10.112199932336807,
+        "throughput": 988904.4982212017,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 39,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9921,
+        "weighted_f1": 0.9921788287665222,
+        "latency_ms": 14.632399892434478,
+        "throughput": 683414.8925338208,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 40,
+        "flows": 10000,
+        "nodes": 5573,
+        "edges": 20000,
+        "accuracy": 0.9529,
+        "weighted_f1": 0.9585493600360471,
+        "latency_ms": 10.670999996364117,
+        "throughput": 937119.2956055906,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 41,
+        "flows": 10000,
+        "nodes": 6121,
+        "edges": 20000,
+        "accuracy": 0.9729,
+        "weighted_f1": 0.9770812667921458,
+        "latency_ms": 10.196699993684888,
+        "throughput": 980709.4458200487,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 42,
+        "flows": 10000,
+        "nodes": 5281,
+        "edges": 20000,
+        "accuracy": 0.9905,
+        "weighted_f1": 0.9907377587391464,
+        "latency_ms": 9.86450002528727,
+        "throughput": 1013736.121888122,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 43,
+        "flows": 10000,
+        "nodes": 5458,
+        "edges": 20000,
+        "accuracy": 0.9687,
+        "weighted_f1": 0.9685234540128453,
+        "latency_ms": 11.17839990183711,
+        "throughput": 894582.4167872679,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 44,
+        "flows": 10000,
+        "nodes": 5567,
+        "edges": 20000,
+        "accuracy": 0.4946,
+        "weighted_f1": 0.6397702580950937,
+        "latency_ms": 10.539799928665161,
+        "throughput": 948784.6133400442,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 45,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.7272,
+        "weighted_f1": 0.7733158037374683,
+        "latency_ms": 10.10879990644753,
+        "throughput": 989237.1095031631,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 46,
+        "flows": 10000,
+        "nodes": 12021,
+        "edges": 20000,
+        "accuracy": 0.8153,
+        "weighted_f1": 0.7435166800876739,
+        "latency_ms": 11.56130013987422,
+        "throughput": 864954.6226648515,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 47,
+        "flows": 10000,
+        "nodes": 11328,
+        "edges": 20000,
+        "accuracy": 0.8516,
+        "weighted_f1": 0.810207581862274,
+        "latency_ms": 15.293100150302052,
+        "throughput": 653889.6562318328,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 48,
+        "flows": 10000,
+        "nodes": 6593,
+        "edges": 20000,
+        "accuracy": 0.4712,
+        "weighted_f1": 0.6288214505352293,
+        "latency_ms": 11.063799960538745,
+        "throughput": 903848.5905084148,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 49,
+        "flows": 10000,
+        "nodes": 6881,
+        "edges": 20000,
+        "accuracy": 0.9725,
+        "weighted_f1": 0.971348477795669,
+        "latency_ms": 11.56560005620122,
+        "throughput": 864633.0455321444,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 50,
+        "flows": 10000,
+        "nodes": 9914,
+        "edges": 20000,
+        "accuracy": 0.9195,
+        "weighted_f1": 0.8994255981787083,
+        "latency_ms": 16.815599985420704,
+        "throughput": 594685.8874301305,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 51,
+        "flows": 10000,
+        "nodes": 8111,
+        "edges": 20000,
+        "accuracy": 0.4257,
+        "weighted_f1": 0.486548671116416,
+        "latency_ms": 10.443100007250905,
+        "throughput": 957570.0695250214,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 52,
+        "flows": 10000,
+        "nodes": 13506,
+        "edges": 20000,
+        "accuracy": 0.8583,
+        "weighted_f1": 0.8108785348547768,
+        "latency_ms": 11.820900021120906,
+        "throughput": 845959.274008965,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 53,
+        "flows": 10000,
+        "nodes": 15319,
+        "edges": 20000,
+        "accuracy": 0.5453,
+        "weighted_f1": 0.5364943322777582,
+        "latency_ms": 16.05930016376078,
+        "throughput": 622692.1408795806,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 54,
+        "flows": 10000,
+        "nodes": 8803,
+        "edges": 20000,
+        "accuracy": 0.3334,
+        "weighted_f1": 0.16674750093780477,
+        "latency_ms": 9.536799974739552,
+        "throughput": 1048569.7536372098,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 55,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.17778382975421153,
+        "latency_ms": 10.545199969783425,
+        "throughput": 948298.7547561298,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 56,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.23677746007460151,
+        "latency_ms": 12.224200181663036,
+        "throughput": 818049.4307513504,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 57,
+        "flows": 10000,
+        "nodes": 6674,
+        "edges": 20000,
+        "accuracy": 0.3337,
+        "weighted_f1": 0.2657391545028644,
+        "latency_ms": 10.361799970269203,
+        "throughput": 965083.2894567252,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 58,
+        "flows": 10000,
+        "nodes": 6678,
+        "edges": 20000,
+        "accuracy": 0.3338,
+        "weighted_f1": 0.2563895840136899,
+        "latency_ms": 11.177199892699718,
+        "throughput": 894678.4611529945,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 59,
+        "flows": 10000,
+        "nodes": 7796,
+        "edges": 20000,
+        "accuracy": 0.3015,
+        "weighted_f1": 0.20178562091113464,
+        "latency_ms": 9.81430010870099,
+        "throughput": 1018921.3585525446,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 60,
+        "flows": 100,
+        "nodes": 4537,
+        "edges": 10100,
+        "accuracy": 0.97,
+        "weighted_f1": 0.9696048864287079,
+        "latency_ms": 10.618099942803383,
+        "throughput": 9417.880839196365,
+        "dominant_class": "Theft"
+      }
+    ],
+    "Streaming E-GraphSAGE": [
+      {
+        "window": 1,
+        "flows": 10000,
+        "nodes": 8666,
+        "edges": 20000,
+        "accuracy": 0.5038,
+        "weighted_f1": 0.3489052089252516,
+        "latency_ms": 9.81130008585751,
+        "throughput": 1019232.9163812338,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 2,
+        "flows": 10000,
+        "nodes": 8558,
+        "edges": 20000,
+        "accuracy": 0.133,
+        "weighted_f1": 0.13707245928651954,
+        "latency_ms": 10.379900224506855,
+        "throughput": 963400.3972783944,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 3,
+        "flows": 10000,
+        "nodes": 6628,
+        "edges": 20000,
+        "accuracy": 0.4423,
+        "weighted_f1": 0.3271143682054608,
+        "latency_ms": 15.417099930346012,
+        "throughput": 648630.4198052614,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 4,
+        "flows": 10000,
+        "nodes": 7653,
+        "edges": 20000,
+        "accuracy": 0.2682,
+        "weighted_f1": 0.2904578365565357,
+        "latency_ms": 17.900200095027685,
+        "throughput": 558652.972978654,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 5,
+        "flows": 10000,
+        "nodes": 7289,
+        "edges": 20000,
+        "accuracy": 0.4415,
+        "weighted_f1": 0.4144230264690109,
+        "latency_ms": 15.685999998822808,
+        "throughput": 637511.1564930812,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 6,
+        "flows": 10000,
+        "nodes": 6784,
+        "edges": 20000,
+        "accuracy": 0.501,
+        "weighted_f1": 0.4929221541992994,
+        "latency_ms": 13.36560002528131,
+        "throughput": 748189.3802810792,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 7,
+        "flows": 10000,
+        "nodes": 6598,
+        "edges": 20000,
+        "accuracy": 0.7663,
+        "weighted_f1": 0.8313097750771478,
+        "latency_ms": 12.441199971362948,
+        "throughput": 803780.9876071374,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 8,
+        "flows": 10000,
+        "nodes": 5367,
+        "edges": 20000,
+        "accuracy": 0.9667,
+        "weighted_f1": 0.9690248446249785,
+        "latency_ms": 13.829499948769808,
+        "throughput": 723091.9438189479,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 9,
+        "flows": 10000,
+        "nodes": 5247,
+        "edges": 20000,
+        "accuracy": 0.9795,
+        "weighted_f1": 0.9757018693037417,
+        "latency_ms": 9.329000022262335,
+        "throughput": 1071926.2489158986,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 10,
+        "flows": 10000,
+        "nodes": 5305,
+        "edges": 20000,
+        "accuracy": 0.9889,
+        "weighted_f1": 0.9852962875189142,
+        "latency_ms": 11.092100059613585,
+        "throughput": 901542.5344394494,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 11,
+        "flows": 10000,
+        "nodes": 5685,
+        "edges": 20000,
+        "accuracy": 0.9783,
+        "weighted_f1": 0.9786971448692124,
+        "latency_ms": 9.586700005456805,
+        "throughput": 1043111.8105612925,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 12,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.9971,
+        "weighted_f1": 0.9961094024054122,
+        "latency_ms": 10.356599930673838,
+        "throughput": 965567.856916277,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 13,
+        "flows": 10000,
+        "nodes": 7642,
+        "edges": 20000,
+        "accuracy": 0.9799,
+        "weighted_f1": 0.9825155091769264,
+        "latency_ms": 10.183299891650677,
+        "throughput": 981999.9515283877,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 14,
+        "flows": 10000,
+        "nodes": 5383,
+        "edges": 20000,
+        "accuracy": 0.9794,
+        "weighted_f1": 0.9781583174486502,
+        "latency_ms": 13.475700048729777,
+        "throughput": 742076.4757184249,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 15,
+        "flows": 10000,
+        "nodes": 5320,
+        "edges": 20000,
+        "accuracy": 0.9909,
+        "weighted_f1": 0.9915916761853248,
+        "latency_ms": 13.552100164815784,
+        "throughput": 737893.011295931,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 16,
+        "flows": 10000,
+        "nodes": 5285,
+        "edges": 20000,
+        "accuracy": 0.9751,
+        "weighted_f1": 0.9781035505021133,
+        "latency_ms": 9.615899994969368,
+        "throughput": 1039944.259531773,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 17,
+        "flows": 10000,
+        "nodes": 5293,
+        "edges": 20000,
+        "accuracy": 0.9915,
+        "weighted_f1": 0.9918337354073011,
+        "latency_ms": 10.7787000015378,
+        "throughput": 927755.6661353686,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 18,
+        "flows": 10000,
+        "nodes": 7204,
+        "edges": 20000,
+        "accuracy": 0.9734,
+        "weighted_f1": 0.9734404803351404,
+        "latency_ms": 10.584400035440922,
+        "throughput": 944786.6640070188,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 19,
+        "flows": 10000,
+        "nodes": 7614,
+        "edges": 20000,
+        "accuracy": 0.9644,
+        "weighted_f1": 0.9705099408104261,
+        "latency_ms": 13.037000084295869,
+        "throughput": 767047.628698401,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 20,
+        "flows": 10000,
+        "nodes": 5294,
+        "edges": 20000,
+        "accuracy": 0.975,
+        "weighted_f1": 0.9770351238445243,
+        "latency_ms": 11.774000013247132,
+        "throughput": 849329.0291106527,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 21,
+        "flows": 10000,
+        "nodes": 5455,
+        "edges": 20000,
+        "accuracy": 0.987,
+        "weighted_f1": 0.9869796692011118,
+        "latency_ms": 14.357199892401695,
+        "throughput": 696514.6459576933,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 22,
+        "flows": 10000,
+        "nodes": 5302,
+        "edges": 20000,
+        "accuracy": 0.982,
+        "weighted_f1": 0.9847973489488626,
+        "latency_ms": 10.78599994070828,
+        "throughput": 927127.7633015946,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 23,
+        "flows": 10000,
+        "nodes": 7780,
+        "edges": 20000,
+        "accuracy": 0.9944,
+        "weighted_f1": 0.9947290906889917,
+        "latency_ms": 9.790400043129921,
+        "throughput": 1021408.7224165226,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 24,
+        "flows": 10000,
+        "nodes": 7753,
+        "edges": 20000,
+        "accuracy": 0.9841,
+        "weighted_f1": 0.9863676934961448,
+        "latency_ms": 9.406999917700887,
+        "throughput": 1063038.1723702666,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 25,
+        "flows": 10000,
+        "nodes": 5227,
+        "edges": 20000,
+        "accuracy": 0.993,
+        "weighted_f1": 0.9923663548785193,
+        "latency_ms": 11.884199921041727,
+        "throughput": 841453.3638309439,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 26,
+        "flows": 10000,
+        "nodes": 5610,
+        "edges": 20000,
+        "accuracy": 0.9831,
+        "weighted_f1": 0.9848216441181816,
+        "latency_ms": 13.63519998267293,
+        "throughput": 733395.9173835076,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 27,
+        "flows": 10000,
+        "nodes": 5400,
+        "edges": 20000,
+        "accuracy": 0.983,
+        "weighted_f1": 0.9848521319482394,
+        "latency_ms": 9.910099906846881,
+        "throughput": 1009071.5627489293,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 28,
+        "flows": 10000,
+        "nodes": 5274,
+        "edges": 20000,
+        "accuracy": 0.9967,
+        "weighted_f1": 0.9970198771407922,
+        "latency_ms": 13.051499845460057,
+        "throughput": 766195.4655332953,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 29,
+        "flows": 10000,
+        "nodes": 5246,
+        "edges": 20000,
+        "accuracy": 0.9556,
+        "weighted_f1": 0.9591942091672677,
+        "latency_ms": 10.751700028777122,
+        "throughput": 930085.4723657484,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 30,
+        "flows": 10000,
+        "nodes": 5244,
+        "edges": 20000,
+        "accuracy": 0.9743,
+        "weighted_f1": 0.9774808276433982,
+        "latency_ms": 9.470700053498149,
+        "throughput": 1055888.1543615507,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 31,
+        "flows": 10000,
+        "nodes": 5315,
+        "edges": 20000,
+        "accuracy": 0.9774,
+        "weighted_f1": 0.9805770686934143,
+        "latency_ms": 10.30460000038147,
+        "throughput": 970440.3858111723,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 32,
+        "flows": 10000,
+        "nodes": 6092,
+        "edges": 20000,
+        "accuracy": 0.9804,
+        "weighted_f1": 0.9807682677605871,
+        "latency_ms": 12.363800080493093,
+        "throughput": 808812.8192704633,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 33,
+        "flows": 10000,
+        "nodes": 5586,
+        "edges": 20000,
+        "accuracy": 0.9793,
+        "weighted_f1": 0.9822946956939177,
+        "latency_ms": 13.735600048676133,
+        "throughput": 728035.1760798263,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 34,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9884,
+        "weighted_f1": 0.986081223468475,
+        "latency_ms": 11.601000092923641,
+        "throughput": 861994.6487285853,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 35,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9816,
+        "weighted_f1": 0.9845359382625453,
+        "latency_ms": 12.278599897399545,
+        "throughput": 814425.1041291667,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 36,
+        "flows": 10000,
+        "nodes": 5723,
+        "edges": 20000,
+        "accuracy": 0.9669,
+        "weighted_f1": 0.9704185173419364,
+        "latency_ms": 13.37429997511208,
+        "throughput": 747702.6848963134,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 37,
+        "flows": 10000,
+        "nodes": 5953,
+        "edges": 20000,
+        "accuracy": 0.9918,
+        "weighted_f1": 0.9933145914732111,
+        "latency_ms": 10.364599991589785,
+        "throughput": 964822.5699124294,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 38,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9773,
+        "weighted_f1": 0.9782318867630428,
+        "latency_ms": 10.640300111845136,
+        "throughput": 939823.1154089036,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 39,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9915,
+        "weighted_f1": 0.9926043446137593,
+        "latency_ms": 9.772599907591939,
+        "throughput": 1023269.1499251293,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 40,
+        "flows": 10000,
+        "nodes": 5573,
+        "edges": 20000,
+        "accuracy": 0.9694,
+        "weighted_f1": 0.9726502579236094,
+        "latency_ms": 15.328599838539958,
+        "throughput": 652375.305333334,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 41,
+        "flows": 10000,
+        "nodes": 6121,
+        "edges": 20000,
+        "accuracy": 0.9829,
+        "weighted_f1": 0.985671856785559,
+        "latency_ms": 9.77399991825223,
+        "throughput": 1023122.5786410875,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 42,
+        "flows": 10000,
+        "nodes": 5281,
+        "edges": 20000,
+        "accuracy": 0.9891,
+        "weighted_f1": 0.9904323004238553,
+        "latency_ms": 11.382600059732795,
+        "throughput": 878533.8980129948,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 43,
+        "flows": 10000,
+        "nodes": 5458,
+        "edges": 20000,
+        "accuracy": 0.9832,
+        "weighted_f1": 0.984439512460026,
+        "latency_ms": 11.111600091680884,
+        "throughput": 899960.3943168252,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 44,
+        "flows": 10000,
+        "nodes": 5567,
+        "edges": 20000,
+        "accuracy": 0.9257,
+        "weighted_f1": 0.945794042808922,
+        "latency_ms": 11.255500139668584,
+        "throughput": 888454.5223144965,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 45,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.7329,
+        "weighted_f1": 0.7777535813484103,
+        "latency_ms": 14.264999888837337,
+        "throughput": 701016.4793499375,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 46,
+        "flows": 10000,
+        "nodes": 12021,
+        "edges": 20000,
+        "accuracy": 0.814,
+        "weighted_f1": 0.7418460463870705,
+        "latency_ms": 17.136399867013097,
+        "throughput": 583553.1428774378,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 47,
+        "flows": 10000,
+        "nodes": 11328,
+        "edges": 20000,
+        "accuracy": 0.8459,
+        "weighted_f1": 0.8072531385345649,
+        "latency_ms": 14.433100121095777,
+        "throughput": 692851.8416763251,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 48,
+        "flows": 10000,
+        "nodes": 6593,
+        "edges": 20000,
+        "accuracy": 0.4659,
+        "weighted_f1": 0.6240027982300412,
+        "latency_ms": 10.921799810603261,
+        "throughput": 915600.0085527712,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 49,
+        "flows": 10000,
+        "nodes": 6881,
+        "edges": 20000,
+        "accuracy": 0.9709,
+        "weighted_f1": 0.9699792373828253,
+        "latency_ms": 10.786900063976645,
+        "throughput": 927050.3982321543,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 50,
+        "flows": 10000,
+        "nodes": 9914,
+        "edges": 20000,
+        "accuracy": 0.9197,
+        "weighted_f1": 0.900248173004857,
+        "latency_ms": 11.95830013602972,
+        "throughput": 836239.2552659331,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 51,
+        "flows": 10000,
+        "nodes": 8111,
+        "edges": 20000,
+        "accuracy": 0.8647,
+        "weighted_f1": 0.8319104002440052,
+        "latency_ms": 10.942399967461824,
+        "throughput": 913876.3004218332,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 52,
+        "flows": 10000,
+        "nodes": 13506,
+        "edges": 20000,
+        "accuracy": 0.8573,
+        "weighted_f1": 0.8104370888953951,
+        "latency_ms": 11.20229996740818,
+        "throughput": 892673.8285078836,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 53,
+        "flows": 10000,
+        "nodes": 15319,
+        "edges": 20000,
+        "accuracy": 0.5445,
+        "weighted_f1": 0.5354292516208142,
+        "latency_ms": 10.386900044977665,
+        "throughput": 962751.1535393333,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 54,
+        "flows": 10000,
+        "nodes": 8803,
+        "edges": 20000,
+        "accuracy": 0.3334,
+        "weighted_f1": 0.16697230602077215,
+        "latency_ms": 9.929500054568052,
+        "throughput": 1007100.0498559355,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 55,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.17778382975421153,
+        "latency_ms": 12.999400030821562,
+        "throughput": 769266.2720040934,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 56,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.17013542745738938,
+        "latency_ms": 10.720399906858802,
+        "throughput": 932801.0229918851,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 57,
+        "flows": 10000,
+        "nodes": 6674,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.16702500375206364,
+        "latency_ms": 9.723900118842721,
+        "throughput": 1028393.9445883714,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 58,
+        "flows": 10000,
+        "nodes": 6678,
+        "edges": 20000,
+        "accuracy": 0.3338,
+        "weighted_f1": 0.16728609985154047,
+        "latency_ms": 9.952699998393655,
+        "throughput": 1004752.4793889074,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 59,
+        "flows": 10000,
+        "nodes": 7796,
+        "edges": 20000,
+        "accuracy": 0.2998,
+        "weighted_f1": 0.15412640124725266,
+        "latency_ms": 18.023299984633923,
+        "throughput": 554837.3499040505,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 60,
+        "flows": 100,
+        "nodes": 4537,
+        "edges": 10100,
+        "accuracy": 0.9,
+        "weighted_f1": 0.9,
+        "latency_ms": 6.046100053936243,
+        "throughput": 16539.5873551408,
+        "dominant_class": "Theft"
+      }
+    ],
+    "Streaming MLP + Replay": [
+      {
+        "window": 1,
+        "flows": 10000,
+        "nodes": 8666,
+        "edges": 20000,
+        "accuracy": 0.5053,
+        "weighted_f1": 0.41895522980538924,
+        "latency_ms": 9.035800117999315,
+        "throughput": 1106708.854712268,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 2,
+        "flows": 10000,
+        "nodes": 8558,
+        "edges": 20000,
+        "accuracy": 0.3648,
+        "weighted_f1": 0.3588368186681853,
+        "latency_ms": 9.764099959284067,
+        "throughput": 1024159.9370858171,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 3,
+        "flows": 10000,
+        "nodes": 6628,
+        "edges": 20000,
+        "accuracy": 0.4421,
+        "weighted_f1": 0.4034166404315846,
+        "latency_ms": 10.824500117450953,
+        "throughput": 923830.1899852431,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 4,
+        "flows": 10000,
+        "nodes": 7653,
+        "edges": 20000,
+        "accuracy": 0.4709,
+        "weighted_f1": 0.46361937706177886,
+        "latency_ms": 9.364200057461858,
+        "throughput": 1067896.877323921,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 5,
+        "flows": 10000,
+        "nodes": 7289,
+        "edges": 20000,
+        "accuracy": 0.4411,
+        "weighted_f1": 0.3223417497102658,
+        "latency_ms": 10.310800047591329,
+        "throughput": 969856.844652522,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 6,
+        "flows": 10000,
+        "nodes": 6784,
+        "edges": 20000,
+        "accuracy": 0.5005,
+        "weighted_f1": 0.49610068151298253,
+        "latency_ms": 11.473699938505888,
+        "throughput": 871558.4383063626,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 7,
+        "flows": 10000,
+        "nodes": 6598,
+        "edges": 20000,
+        "accuracy": 0.0396,
+        "weighted_f1": 0.022242256807927945,
+        "latency_ms": 10.450399946421385,
+        "throughput": 956901.1761530123,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 8,
+        "flows": 10000,
+        "nodes": 5367,
+        "edges": 20000,
+        "accuracy": 0.9614,
+        "weighted_f1": 0.9674456085330001,
+        "latency_ms": 10.650299955159426,
+        "throughput": 938940.691069983,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 9,
+        "flows": 10000,
+        "nodes": 5247,
+        "edges": 20000,
+        "accuracy": 0.9773,
+        "weighted_f1": 0.9768585723137463,
+        "latency_ms": 10.990099981427193,
+        "throughput": 909909.8294737609,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 10,
+        "flows": 10000,
+        "nodes": 5305,
+        "edges": 20000,
+        "accuracy": 0.9812,
+        "weighted_f1": 0.9819709678321109,
+        "latency_ms": 9.433700004592538,
+        "throughput": 1060029.4683031868,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 11,
+        "flows": 10000,
+        "nodes": 5685,
+        "edges": 20000,
+        "accuracy": 0.9764,
+        "weighted_f1": 0.9760827599420607,
+        "latency_ms": 11.39179989695549,
+        "throughput": 877824.407947382,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 12,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.9959,
+        "weighted_f1": 0.9958892335690184,
+        "latency_ms": 10.609900113195181,
+        "throughput": 942515.9420269501,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 13,
+        "flows": 10000,
+        "nodes": 7642,
+        "edges": 20000,
+        "accuracy": 0.9781,
+        "weighted_f1": 0.9805716964841762,
+        "latency_ms": 10.380000108852983,
+        "throughput": 963391.1266986515,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 14,
+        "flows": 10000,
+        "nodes": 5383,
+        "edges": 20000,
+        "accuracy": 0.9741,
+        "weighted_f1": 0.9752247135306674,
+        "latency_ms": 12.002799892798066,
+        "throughput": 833138.9416897811,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 15,
+        "flows": 10000,
+        "nodes": 5320,
+        "edges": 20000,
+        "accuracy": 0.9908,
+        "weighted_f1": 0.9911070097231154,
+        "latency_ms": 11.033199960365891,
+        "throughput": 906355.367066906,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 16,
+        "flows": 10000,
+        "nodes": 5285,
+        "edges": 20000,
+        "accuracy": 0.9691,
+        "weighted_f1": 0.9714982524132162,
+        "latency_ms": 9.812300093472004,
+        "throughput": 1019129.0426036675,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 17,
+        "flows": 10000,
+        "nodes": 5293,
+        "edges": 20000,
+        "accuracy": 0.9911,
+        "weighted_f1": 0.9912230454358493,
+        "latency_ms": 9.074199944734573,
+        "throughput": 1102025.529622877,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 18,
+        "flows": 10000,
+        "nodes": 7204,
+        "edges": 20000,
+        "accuracy": 0.9691,
+        "weighted_f1": 0.9698871161942083,
+        "latency_ms": 9.577699936926365,
+        "throughput": 1044092.0122633491,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 19,
+        "flows": 10000,
+        "nodes": 7614,
+        "edges": 20000,
+        "accuracy": 0.9633,
+        "weighted_f1": 0.9702506161868117,
+        "latency_ms": 11.188099859282374,
+        "throughput": 893806.8238373249,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 20,
+        "flows": 10000,
+        "nodes": 5294,
+        "edges": 20000,
+        "accuracy": 0.9707,
+        "weighted_f1": 0.9725881702291134,
+        "latency_ms": 14.953500125557184,
+        "throughput": 668739.7543073475,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 21,
+        "flows": 10000,
+        "nodes": 5455,
+        "edges": 20000,
+        "accuracy": 0.9671,
+        "weighted_f1": 0.9712146997563307,
+        "latency_ms": 11.095500085502863,
+        "throughput": 901266.2721769324,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 22,
+        "flows": 10000,
+        "nodes": 5302,
+        "edges": 20000,
+        "accuracy": 0.9792,
+        "weighted_f1": 0.9814161912469977,
+        "latency_ms": 10.10149996727705,
+        "throughput": 989951.9905354799,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 23,
+        "flows": 10000,
+        "nodes": 7780,
+        "edges": 20000,
+        "accuracy": 0.977,
+        "weighted_f1": 0.9803321967671754,
+        "latency_ms": 9.265800006687641,
+        "throughput": 1079237.625761666,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 24,
+        "flows": 10000,
+        "nodes": 7753,
+        "edges": 20000,
+        "accuracy": 0.9818,
+        "weighted_f1": 0.9836023313734399,
+        "latency_ms": 8.75940010882914,
+        "throughput": 1141630.691115523,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 25,
+        "flows": 10000,
+        "nodes": 5227,
+        "edges": 20000,
+        "accuracy": 0.9678,
+        "weighted_f1": 0.9725137107666509,
+        "latency_ms": 9.972799802199006,
+        "throughput": 1002727.4384666778,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 26,
+        "flows": 10000,
+        "nodes": 5610,
+        "edges": 20000,
+        "accuracy": 0.9795,
+        "weighted_f1": 0.9818085968283947,
+        "latency_ms": 10.123200016096234,
+        "throughput": 987829.9336276728,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 27,
+        "flows": 10000,
+        "nodes": 5400,
+        "edges": 20000,
+        "accuracy": 0.9624,
+        "weighted_f1": 0.9673823735185242,
+        "latency_ms": 10.029900120571256,
+        "throughput": 997018.9014634422,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 28,
+        "flows": 10000,
+        "nodes": 5274,
+        "edges": 20000,
+        "accuracy": 0.9951,
+        "weighted_f1": 0.9944772399561927,
+        "latency_ms": 9.870900074020028,
+        "throughput": 1013078.8403298459,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 29,
+        "flows": 10000,
+        "nodes": 5246,
+        "edges": 20000,
+        "accuracy": 0.9305,
+        "weighted_f1": 0.941148932407883,
+        "latency_ms": 9.738999884575605,
+        "throughput": 1026799.4782336695,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 30,
+        "flows": 10000,
+        "nodes": 5244,
+        "edges": 20000,
+        "accuracy": 0.9725,
+        "weighted_f1": 0.9751954526503769,
+        "latency_ms": 9.606300154700875,
+        "throughput": 1040983.50446675,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 31,
+        "flows": 10000,
+        "nodes": 5315,
+        "edges": 20000,
+        "accuracy": 0.9488,
+        "weighted_f1": 0.9568681890323207,
+        "latency_ms": 11.886700056493282,
+        "throughput": 841276.3805323207,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 32,
+        "flows": 10000,
+        "nodes": 6092,
+        "edges": 20000,
+        "accuracy": 0.9571,
+        "weighted_f1": 0.961420997313179,
+        "latency_ms": 10.60219993814826,
+        "throughput": 943200.4733299306,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 33,
+        "flows": 10000,
+        "nodes": 5586,
+        "edges": 20000,
+        "accuracy": 0.9777,
+        "weighted_f1": 0.9796595685012373,
+        "latency_ms": 9.780799970030785,
+        "throughput": 1022411.2578358481,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 34,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9652,
+        "weighted_f1": 0.9696832957583168,
+        "latency_ms": 13.677099952474236,
+        "throughput": 731149.1496551478,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 35,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9786,
+        "weighted_f1": 0.9813563668664163,
+        "latency_ms": 12.46170001104474,
+        "throughput": 802458.7328484117,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 36,
+        "flows": 10000,
+        "nodes": 5723,
+        "edges": 20000,
+        "accuracy": 0.9394,
+        "weighted_f1": 0.9446423498511869,
+        "latency_ms": 9.082300122827291,
+        "throughput": 1101042.6725347005,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 37,
+        "flows": 10000,
+        "nodes": 5953,
+        "edges": 20000,
+        "accuracy": 0.9906,
+        "weighted_f1": 0.9908538854576194,
+        "latency_ms": 15.616400167346,
+        "throughput": 640352.4431264299,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 38,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9535,
+        "weighted_f1": 0.9599922230611159,
+        "latency_ms": 16.07359992340207,
+        "throughput": 622138.1674083277,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 39,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9888,
+        "weighted_f1": 0.9894565132018377,
+        "latency_ms": 15.177299967035651,
+        "throughput": 658878.7216250261,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 40,
+        "flows": 10000,
+        "nodes": 5573,
+        "edges": 20000,
+        "accuracy": 0.9446,
+        "weighted_f1": 0.9514820948973999,
+        "latency_ms": 11.684500146657228,
+        "throughput": 855834.6420031377,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 41,
+        "flows": 10000,
+        "nodes": 6121,
+        "edges": 20000,
+        "accuracy": 0.9601,
+        "weighted_f1": 0.9672764361567484,
+        "latency_ms": 9.48179978877306,
+        "throughput": 1054652.0937765967,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 42,
+        "flows": 10000,
+        "nodes": 5281,
+        "edges": 20000,
+        "accuracy": 0.9875,
+        "weighted_f1": 0.9881356264430058,
+        "latency_ms": 8.910800097510219,
+        "throughput": 1122233.6816639076,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 43,
+        "flows": 10000,
+        "nodes": 5458,
+        "edges": 20000,
+        "accuracy": 0.9593,
+        "weighted_f1": 0.963952525772015,
+        "latency_ms": 9.01300017721951,
+        "throughput": 1109508.465924049,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 44,
+        "flows": 10000,
+        "nodes": 5567,
+        "edges": 20000,
+        "accuracy": 0.3929,
+        "weighted_f1": 0.5417107996681372,
+        "latency_ms": 10.429100133478642,
+        "throughput": 958855.4977911105,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 45,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.7492,
+        "weighted_f1": 0.783915547966041,
+        "latency_ms": 9.080599993467331,
+        "throughput": 1101248.8169497715,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 46,
+        "flows": 10000,
+        "nodes": 12021,
+        "edges": 20000,
+        "accuracy": 0.8142,
+        "weighted_f1": 0.7428353075129104,
+        "latency_ms": 9.552899980917573,
+        "throughput": 1046802.543727615,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 47,
+        "flows": 10000,
+        "nodes": 11328,
+        "edges": 20000,
+        "accuracy": 0.842,
+        "weighted_f1": 0.8038239454508597,
+        "latency_ms": 9.488000068813562,
+        "throughput": 1053962.8928618317,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 48,
+        "flows": 10000,
+        "nodes": 6593,
+        "edges": 20000,
+        "accuracy": 0.443,
+        "weighted_f1": 0.6024199420606795,
+        "latency_ms": 16.053299885243177,
+        "throughput": 622924.8859415124,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 49,
+        "flows": 10000,
+        "nodes": 6881,
+        "edges": 20000,
+        "accuracy": 0.9654,
+        "weighted_f1": 0.9651852318936509,
+        "latency_ms": 9.258199948817492,
+        "throughput": 1080123.5721072599,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 50,
+        "flows": 10000,
+        "nodes": 9914,
+        "edges": 20000,
+        "accuracy": 0.9189,
+        "weighted_f1": 0.8987552341481277,
+        "latency_ms": 11.699300026521087,
+        "throughput": 854751.9917713922,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 51,
+        "flows": 10000,
+        "nodes": 8111,
+        "edges": 20000,
+        "accuracy": 0.8622,
+        "weighted_f1": 0.82927804087406,
+        "latency_ms": 11.378599796444178,
+        "throughput": 878842.7556020565,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 52,
+        "flows": 10000,
+        "nodes": 13506,
+        "edges": 20000,
+        "accuracy": 0.8573,
+        "weighted_f1": 0.8106010034097918,
+        "latency_ms": 12.575400061905384,
+        "throughput": 795203.3295777973,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 53,
+        "flows": 10000,
+        "nodes": 15319,
+        "edges": 20000,
+        "accuracy": 0.5445,
+        "weighted_f1": 0.5243400882748968,
+        "latency_ms": 19.84920003451407,
+        "throughput": 503798.64088284964,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 54,
+        "flows": 10000,
+        "nodes": 8803,
+        "edges": 20000,
+        "accuracy": 0.3334,
+        "weighted_f1": 0.16771933761437807,
+        "latency_ms": 10.475600138306618,
+        "throughput": 954599.2466276496,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 55,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3335,
+        "weighted_f1": 0.17133612704695478,
+        "latency_ms": 10.859299916774035,
+        "throughput": 920869.6763732716,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 56,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3336,
+        "weighted_f1": 0.19317411120481193,
+        "latency_ms": 14.902299968525767,
+        "throughput": 671037.3580669014,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 57,
+        "flows": 10000,
+        "nodes": 6674,
+        "edges": 20000,
+        "accuracy": 0.3326,
+        "weighted_f1": 0.25181092748599593,
+        "latency_ms": 14.27629985846579,
+        "throughput": 700461.6111414919,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 58,
+        "flows": 10000,
+        "nodes": 6678,
+        "edges": 20000,
+        "accuracy": 0.3337,
+        "weighted_f1": 0.25574265603979257,
+        "latency_ms": 10.270199971273541,
+        "throughput": 973690.8753452407,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 59,
+        "flows": 10000,
+        "nodes": 7796,
+        "edges": 20000,
+        "accuracy": 0.3022,
+        "weighted_f1": 0.21749856747500976,
+        "latency_ms": 11.186900082975626,
+        "throughput": 893902.6831229264,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 60,
+        "flows": 100,
+        "nodes": 4537,
+        "edges": 10100,
+        "accuracy": 0.99,
+        "weighted_f1": 0.9901215750317546,
+        "latency_ms": 5.2866998594254255,
+        "throughput": 18915.391956990785,
+        "dominant_class": "Theft"
+      }
+    ],
+    "Streaming MLP": [
+      {
+        "window": 1,
+        "flows": 10000,
+        "nodes": 8666,
+        "edges": 20000,
+        "accuracy": 0.5053,
+        "weighted_f1": 0.41895522980538924,
+        "latency_ms": 9.867499815300107,
+        "throughput": 1013427.9389085413,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 2,
+        "flows": 10000,
+        "nodes": 8558,
+        "edges": 20000,
+        "accuracy": 0.3648,
+        "weighted_f1": 0.3588063084494377,
+        "latency_ms": 9.108599973842502,
+        "throughput": 1097863.5606698466,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 3,
+        "flows": 10000,
+        "nodes": 6628,
+        "edges": 20000,
+        "accuracy": 0.442,
+        "weighted_f1": 0.4028641373069118,
+        "latency_ms": 13.271000003442168,
+        "throughput": 753522.718514524,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 4,
+        "flows": 10000,
+        "nodes": 7653,
+        "edges": 20000,
+        "accuracy": 0.4722,
+        "weighted_f1": 0.46430484685368967,
+        "latency_ms": 15.592900104820728,
+        "throughput": 641317.5184075207,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 5,
+        "flows": 10000,
+        "nodes": 7289,
+        "edges": 20000,
+        "accuracy": 0.4414,
+        "weighted_f1": 0.4085210176981581,
+        "latency_ms": 8.698599878698587,
+        "throughput": 1149610.2981456043,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 6,
+        "flows": 10000,
+        "nodes": 6784,
+        "edges": 20000,
+        "accuracy": 0.5008,
+        "weighted_f1": 0.48938431853909414,
+        "latency_ms": 9.979299968108535,
+        "throughput": 1002074.2969905322,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 7,
+        "flows": 10000,
+        "nodes": 6598,
+        "edges": 20000,
+        "accuracy": 0.0406,
+        "weighted_f1": 0.017727993188189458,
+        "latency_ms": 10.856300126761198,
+        "throughput": 921124.1291450312,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 8,
+        "flows": 10000,
+        "nodes": 5367,
+        "edges": 20000,
+        "accuracy": 0.9624,
+        "weighted_f1": 0.9602227363117286,
+        "latency_ms": 9.09409997984767,
+        "throughput": 1099614.0379102698,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 9,
+        "flows": 10000,
+        "nodes": 5247,
+        "edges": 20000,
+        "accuracy": 0.9778,
+        "weighted_f1": 0.9777532436287696,
+        "latency_ms": 10.161299956962466,
+        "throughput": 984126.0510322851,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 10,
+        "flows": 10000,
+        "nodes": 5305,
+        "edges": 20000,
+        "accuracy": 0.9868,
+        "weighted_f1": 0.98424519171577,
+        "latency_ms": 9.381999960169196,
+        "throughput": 1065870.8209821458,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 11,
+        "flows": 10000,
+        "nodes": 5685,
+        "edges": 20000,
+        "accuracy": 0.9778,
+        "weighted_f1": 0.9749936989332957,
+        "latency_ms": 15.058000106364489,
+        "throughput": 664098.8132131405,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 12,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.9963,
+        "weighted_f1": 0.9953947214106004,
+        "latency_ms": 9.831100003793836,
+        "throughput": 1017180.1727315342,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 13,
+        "flows": 10000,
+        "nodes": 7642,
+        "edges": 20000,
+        "accuracy": 0.9799,
+        "weighted_f1": 0.9774323538921226,
+        "latency_ms": 9.200999978929758,
+        "throughput": 1086838.3896206878,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 14,
+        "flows": 10000,
+        "nodes": 5383,
+        "edges": 20000,
+        "accuracy": 0.9767,
+        "weighted_f1": 0.9709225787816249,
+        "latency_ms": 9.710399899631739,
+        "throughput": 1029823.7048279798,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 15,
+        "flows": 10000,
+        "nodes": 5320,
+        "edges": 20000,
+        "accuracy": 0.9898,
+        "weighted_f1": 0.9899773576419338,
+        "latency_ms": 8.988399989902973,
+        "throughput": 1112545.0593246182,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 16,
+        "flows": 10000,
+        "nodes": 5285,
+        "edges": 20000,
+        "accuracy": 0.9797,
+        "weighted_f1": 0.9748366257533521,
+        "latency_ms": 12.302899966016412,
+        "throughput": 812816.4926661536,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 17,
+        "flows": 10000,
+        "nodes": 5293,
+        "edges": 20000,
+        "accuracy": 0.9915,
+        "weighted_f1": 0.9916028117440184,
+        "latency_ms": 10.08260017260909,
+        "throughput": 991807.651677641,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 18,
+        "flows": 10000,
+        "nodes": 7204,
+        "edges": 20000,
+        "accuracy": 0.972,
+        "weighted_f1": 0.9671457013493128,
+        "latency_ms": 11.512200115248561,
+        "throughput": 868643.6910312594,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 19,
+        "flows": 10000,
+        "nodes": 7614,
+        "edges": 20000,
+        "accuracy": 0.9644,
+        "weighted_f1": 0.9694254645377932,
+        "latency_ms": 20.322300028055906,
+        "throughput": 492070.2866405142,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 20,
+        "flows": 10000,
+        "nodes": 5294,
+        "edges": 20000,
+        "accuracy": 0.9741,
+        "weighted_f1": 0.9684192883034167,
+        "latency_ms": 9.514400037005544,
+        "throughput": 1051038.4218769183,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 21,
+        "flows": 10000,
+        "nodes": 5455,
+        "edges": 20000,
+        "accuracy": 0.9913,
+        "weighted_f1": 0.9891139120821927,
+        "latency_ms": 9.536499856039882,
+        "throughput": 1048602.752682533,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 22,
+        "flows": 10000,
+        "nodes": 5302,
+        "edges": 20000,
+        "accuracy": 0.9816,
+        "weighted_f1": 0.9811471965370003,
+        "latency_ms": 9.716000175103545,
+        "throughput": 1029230.1173094028,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 23,
+        "flows": 10000,
+        "nodes": 7780,
+        "edges": 20000,
+        "accuracy": 0.9953,
+        "weighted_f1": 0.9947203375527426,
+        "latency_ms": 10.964900022372603,
+        "throughput": 912001.019580312,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 24,
+        "flows": 10000,
+        "nodes": 7753,
+        "edges": 20000,
+        "accuracy": 0.9841,
+        "weighted_f1": 0.9844179737747936,
+        "latency_ms": 9.881200036033988,
+        "throughput": 1012022.8275445069,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 25,
+        "flows": 10000,
+        "nodes": 5227,
+        "edges": 20000,
+        "accuracy": 0.991,
+        "weighted_f1": 0.9895720155217458,
+        "latency_ms": 10.277999797835946,
+        "throughput": 972951.9553119198,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 26,
+        "flows": 10000,
+        "nodes": 5610,
+        "edges": 20000,
+        "accuracy": 0.9831,
+        "weighted_f1": 0.9835820678111293,
+        "latency_ms": 12.26050010882318,
+        "throughput": 815627.414154466,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 27,
+        "flows": 10000,
+        "nodes": 5400,
+        "edges": 20000,
+        "accuracy": 0.9864,
+        "weighted_f1": 0.9847272152449196,
+        "latency_ms": 10.250000050291419,
+        "throughput": 975609.7513107513,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 28,
+        "flows": 10000,
+        "nodes": 5274,
+        "edges": 20000,
+        "accuracy": 0.9963,
+        "weighted_f1": 0.9958618533758358,
+        "latency_ms": 9.323500096797943,
+        "throughput": 1072558.5773774371,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 29,
+        "flows": 10000,
+        "nodes": 5246,
+        "edges": 20000,
+        "accuracy": 0.9529,
+        "weighted_f1": 0.954569244339379,
+        "latency_ms": 9.6220001578331,
+        "throughput": 1039284.9548915438,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 30,
+        "flows": 10000,
+        "nodes": 5244,
+        "edges": 20000,
+        "accuracy": 0.9743,
+        "weighted_f1": 0.9765513304383636,
+        "latency_ms": 10.911399964243174,
+        "throughput": 916472.6829527059,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 31,
+        "flows": 10000,
+        "nodes": 5315,
+        "edges": 20000,
+        "accuracy": 0.9723,
+        "weighted_f1": 0.9741904576272021,
+        "latency_ms": 10.694799944758415,
+        "throughput": 935033.8530550129,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 32,
+        "flows": 10000,
+        "nodes": 6092,
+        "edges": 20000,
+        "accuracy": 0.9775,
+        "weighted_f1": 0.9783012885515864,
+        "latency_ms": 9.877000004053116,
+        "throughput": 1012453.1736252314,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 33,
+        "flows": 10000,
+        "nodes": 5586,
+        "edges": 20000,
+        "accuracy": 0.9794,
+        "weighted_f1": 0.9813679055687115,
+        "latency_ms": 13.713000109419227,
+        "throughput": 729235.0266322225,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 34,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9843,
+        "weighted_f1": 0.9851733517782908,
+        "latency_ms": 10.401600040495396,
+        "throughput": 961390.5515563096,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 35,
+        "flows": 10000,
+        "nodes": 5242,
+        "edges": 20000,
+        "accuracy": 0.9805,
+        "weighted_f1": 0.9825271469276815,
+        "latency_ms": 11.865600012242794,
+        "throughput": 842772.3831649568,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 36,
+        "flows": 10000,
+        "nodes": 5723,
+        "edges": 20000,
+        "accuracy": 0.9621,
+        "weighted_f1": 0.9648318894152015,
+        "latency_ms": 10.460000019520521,
+        "throughput": 956022.9427665329,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 37,
+        "flows": 10000,
+        "nodes": 5953,
+        "edges": 20000,
+        "accuracy": 0.9908,
+        "weighted_f1": 0.9909770335841357,
+        "latency_ms": 10.43469994328916,
+        "throughput": 958340.9254073733,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 38,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9737,
+        "weighted_f1": 0.976446777675474,
+        "latency_ms": 9.892500005662441,
+        "throughput": 1010866.8177180719,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 39,
+        "flows": 10000,
+        "nodes": 5238,
+        "edges": 20000,
+        "accuracy": 0.9901,
+        "weighted_f1": 0.9904726292744277,
+        "latency_ms": 10.450600180774927,
+        "throughput": 956882.8418482741,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 40,
+        "flows": 10000,
+        "nodes": 5573,
+        "edges": 20000,
+        "accuracy": 0.9665,
+        "weighted_f1": 0.9699116093551715,
+        "latency_ms": 12.255099834874272,
+        "throughput": 815986.8246477318,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 41,
+        "flows": 10000,
+        "nodes": 6121,
+        "edges": 20000,
+        "accuracy": 0.9803,
+        "weighted_f1": 0.9829397288913538,
+        "latency_ms": 9.060800075531006,
+        "throughput": 1103655.297174621,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 42,
+        "flows": 10000,
+        "nodes": 5281,
+        "edges": 20000,
+        "accuracy": 0.9889,
+        "weighted_f1": 0.9894983105736396,
+        "latency_ms": 9.518699953332543,
+        "throughput": 1050563.632536705,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 43,
+        "flows": 10000,
+        "nodes": 5458,
+        "edges": 20000,
+        "accuracy": 0.9802,
+        "weighted_f1": 0.9812024045579727,
+        "latency_ms": 9.993000188842416,
+        "throughput": 1000700.4714325333,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 44,
+        "flows": 10000,
+        "nodes": 5567,
+        "edges": 20000,
+        "accuracy": 0.9749,
+        "weighted_f1": 0.9755113200869818,
+        "latency_ms": 11.973400134593248,
+        "throughput": 835184.6499398487,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 45,
+        "flows": 10000,
+        "nodes": 7741,
+        "edges": 20000,
+        "accuracy": 0.7962,
+        "weighted_f1": 0.8163672758955383,
+        "latency_ms": 9.148099925369024,
+        "throughput": 1093123.1711044752,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 46,
+        "flows": 10000,
+        "nodes": 12021,
+        "edges": 20000,
+        "accuracy": 0.8143,
+        "weighted_f1": 0.7413943742220689,
+        "latency_ms": 9.357299888506532,
+        "throughput": 1068684.3554392105,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 47,
+        "flows": 10000,
+        "nodes": 11328,
+        "edges": 20000,
+        "accuracy": 0.8422,
+        "weighted_f1": 0.8029965911160883,
+        "latency_ms": 10.0467000156641,
+        "throughput": 995351.7059739726,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 48,
+        "flows": 10000,
+        "nodes": 6593,
+        "edges": 20000,
+        "accuracy": 0.4427,
+        "weighted_f1": 0.6017697959786877,
+        "latency_ms": 11.141099967062473,
+        "throughput": 897577.4411471023,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 49,
+        "flows": 10000,
+        "nodes": 6881,
+        "edges": 20000,
+        "accuracy": 0.9665,
+        "weighted_f1": 0.9646330024357703,
+        "latency_ms": 9.892300004139543,
+        "throughput": 1010887.2553213498,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 50,
+        "flows": 10000,
+        "nodes": 9914,
+        "edges": 20000,
+        "accuracy": 0.9188,
+        "weighted_f1": 0.8981041713440653,
+        "latency_ms": 11.951300082728267,
+        "throughput": 836729.0529715475,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 51,
+        "flows": 10000,
+        "nodes": 8111,
+        "edges": 20000,
+        "accuracy": 0.5698,
+        "weighted_f1": 0.635499533632076,
+        "latency_ms": 13.6826999951154,
+        "throughput": 730849.9056158441,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 52,
+        "flows": 10000,
+        "nodes": 13506,
+        "edges": 20000,
+        "accuracy": 0.858,
+        "weighted_f1": 0.8105396730543574,
+        "latency_ms": 10.519100120291114,
+        "throughput": 950651.6608497925,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 53,
+        "flows": 10000,
+        "nodes": 15319,
+        "edges": 20000,
+        "accuracy": 0.5449,
+        "weighted_f1": 0.40908002991075143,
+        "latency_ms": 10.011699981987476,
+        "throughput": 998831.3690973035,
+        "dominant_class": "Reconnaissance"
+      },
+      {
+        "window": 54,
+        "flows": 10000,
+        "nodes": 8803,
+        "edges": 20000,
+        "accuracy": 0.3304,
+        "weighted_f1": 0.17026667310972252,
+        "latency_ms": 11.855099815875292,
+        "throughput": 843518.8362234532,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 55,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3335,
+        "weighted_f1": 0.270346374752802,
+        "latency_ms": 9.93989990092814,
+        "throughput": 1006046.3485217037,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 56,
+        "flows": 10000,
+        "nodes": 6675,
+        "edges": 20000,
+        "accuracy": 0.3332,
+        "weighted_f1": 0.24635709711863416,
+        "latency_ms": 12.407600181177258,
+        "throughput": 805957.6270978115,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 57,
+        "flows": 10000,
+        "nodes": 6674,
+        "edges": 20000,
+        "accuracy": 0.3332,
+        "weighted_f1": 0.17336254416213195,
+        "latency_ms": 11.531600030139089,
+        "throughput": 867182.3488383151,
+        "dominant_class": "DoS"
+      },
+      {
+        "window": 58,
+        "flows": 10000,
+        "nodes": 6678,
+        "edges": 20000,
+        "accuracy": 0.3332,
+        "weighted_f1": 0.1732905487921219,
+        "latency_ms": 10.376600082963705,
+        "throughput": 963706.7941375127,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 59,
+        "flows": 10000,
+        "nodes": 7796,
+        "edges": 20000,
+        "accuracy": 0.2986,
+        "weighted_f1": 0.1568705233952164,
+        "latency_ms": 14.205500017851591,
+        "throughput": 703952.6934943033,
+        "dominant_class": "DDoS"
+      },
+      {
+        "window": 60,
+        "flows": 100,
+        "nodes": 4537,
+        "edges": 10100,
+        "accuracy": 0.98,
+        "weighted_f1": 0.979450980392157,
+        "latency_ms": 7.412600098177791,
+        "throughput": 13490.542950587958,
+        "dominant_class": "Theft"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+HƯỚNG DẪN CHẠY ĐỒ ÁN BẰNG DOCKER
+Đề tài: Phát hiện xâm nhập mạng bằng GNN trên dữ liệu luồng (Streaming GNN)
+==========================================================================
+
+1. CÀI ĐẶT (chỉ làm 1 lần)
+   - Cài Docker Desktop: https://www.docker.com/products/docker-desktop/
+     (cài xong khởi động lại máy nếu Docker yêu cầu)
+   - Mở Docker Desktop, đợi khởi động xong (1-2 phút).
+   - Lần chạy đầu cần Internet để tải thư viện (khoảng 1 GB), mất 2-5 phút.
+
+2. VÀO BÀI
+   - Nhấp đúp file  chay_docker.bat
+   - Đợi chữ "XONG!", trình duyệt sẽ tự mở trang:  http://localhost:8501
+     (nếu không tự mở, hãy tự gõ địa chỉ trên vào Chrome/Edge)
+
+   Các mục trong trang (thanh bên trái):
+   - Tổng quan              : đề tài, sơ đồ hệ thống, các chỉ số chính
+   - Dữ liệu                : bộ dữ liệu NF-BoT-IoT, phân bố lớp, trôi dữ liệu
+   - Kết quả thực nghiệm    : bảng và biểu đồ so sánh các mô hình
+   - Demo phát hiện theo luồng: bấm "Bắt đầu phát luồng" để xem hệ thống
+                              phát hiện tấn công trực tiếp từng micro-batch
+   - Tài liệu & mã nguồn    : tải báo cáo, bài báo (PDF/Word), xem mã nguồn
+   - Chạy lại thực nghiệm   : chạy lại toàn bộ thực nghiệm (khoảng 5 phút)
+
+3. TẮT / MỞ LẠI
+   - Tắt ứng dụng: nhấp đúp  dung_docker.bat
+   - Mở lại lần sau: nhấp đúp  chay_docker.bat  (chỉ mất vài giây)
+
+4. LƯU Ý
+   - Docker chạy bằng CPU. Mục "Chạy lại thực nghiệm" cho số liệu có thể lệch
+     nhỏ (khoảng 0,01 - 0,02) so với báo cáo (chạy trên GPU). Kết luận không đổi.
+     Kết quả chạy lại lưu ở thư mục  ketqua_chay_lai, không ghi đè kết quả gốc.
+   - Cổng 8501 phải đang trống. Nếu bị chiếm, sửa "8501:8501" trong
+     docker-compose.yml thành ví dụ "8600:8501" rồi vào http://localhost:8600
+
+5. LỖI THƯỜNG GẶP
+   - "Chua cai Docker Desktop": cài Docker Desktop theo mục 1.
+   - "Docker Desktop chua mo": mở Docker Desktop, đợi chạy xong rồi chạy lại.
+   - Trang không vào được: đợi thêm 30 giây rồi tải lại trang (F5).
+   - Muốn dựng lại từ đầu: mở cmd tại thư mục này, gõ
+        docker compose build --no-cache
+        docker compose up -d

@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+torch
+python-docx
+pillow
+pywin32
+pymupdf

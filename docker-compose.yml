@@ -1,0 +1,10 @@
+services:
+  streaming-gnn:
+    build: .
+    image: streaming-gnn-ids:1.0
+    container_name: streaming-gnn-ids
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./ketqua_chay_lai:/app/ketqua_chay_lai
+    restart: unless-stopped
